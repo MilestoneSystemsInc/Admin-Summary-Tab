@@ -1,0 +1,4 @@
+<plugin>
+   <file name="Admin_Summary_Tab.dll"/>
+	<load env="Administration" />
+</plugin>

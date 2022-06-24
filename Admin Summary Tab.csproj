@@ -60,18 +60,6 @@
     <PackageReference Include="MilestoneSystems.VideoOS.Platform" Version="*" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\Admin_Summary_TabAddUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Admin_Summary_TabAddUserControl.Designer.cs">
-      <DependentUpon>Admin_Summary_TabAddUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Admin_Summary_TabHelpPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Admin_Summary_TabHelpPage.Designer.cs">
-      <DependentUpon>Admin_Summary_TabHelpPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Admin_Summary_TabItemManager.cs" />
     <Compile Include="Admin\Admin_Summary_TabTabPlugin.cs" />
     <Compile Include="Admin\Admin_Summary_TabTabUserControl.cs">
@@ -81,18 +69,6 @@
       <DependentUpon>Admin_Summary_TabTabUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\Admin_Summary_TabToolsOptionDialogPlugin.cs" />
-    <Compile Include="Admin\Admin_Summary_TabToolsOptionDialogUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Admin_Summary_TabToolsOptionDialogUserControl.designer.cs">
-      <DependentUpon>Admin_Summary_TabToolsOptionDialogUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Admin_Summary_TabUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Admin\Admin_Summary_TabUserControl.Designer.cs">
-      <DependentUpon>Admin_Summary_TabUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -107,29 +83,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Admin\Admin_Summary_TabAddUserControl.resx">
-      <DependentUpon>Admin_Summary_TabAddUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Admin\Admin_Summary_TabTabUserControl.resx">
       <DependentUpon>Admin_Summary_TabTabUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Admin_Summary_TabToolsOptionDialogUserControl.resx">
-      <DependentUpon>Admin_Summary_TabToolsOptionDialogUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Server.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Admin\Admin_Summary_TabHelpPage.resx">
-      <DependentUpon>Admin_Summary_TabHelpPage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Admin_Summary_TabUserControl.resx">
-      <DependentUpon>Admin_Summary_TabUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -38,8 +38,8 @@ namespace Admin_Summary_Tab.Admin
             bool isInitialized = VideoOS.Platform.Log.LogClient.Instance.Initialized;
             System.Collections.ArrayList groups = VideoOS.Platform.Log.LogClient.Instance.ReadGroups(VideoOS.Platform.EnvironmentManager.Instance.MasterSite.ServerId);
 
-            fillGrid("System",item, dGridViewLogSystem);
-            fillGrid("Audit", item, dGridViewLogAudit);
+            fillGrid("System",item, dGridViewLogSystem, decodenumberofdays(cmbSearchPeriod.Text));
+            fillGrid("Audit", item, dGridViewLogAudit, decodenumberofdays(cmbSearchPeriod.Text));
 
             _associatedItem = item;
             labelItemName.Text = item.Name;
@@ -49,12 +49,19 @@ namespace Admin_Summary_Tab.Admin
         {
 
         }
-        private void fillGrid(string group,Item item,DataGridView mydatagrid)
+        private void fillGrid(string group,Item item,DataGridView mydatagrid, int numofdaysback)
         {
             mydatagrid.Columns.Clear();
             String mypath = "";
 
-            VideoOS.Platform.Log.LogClient.Instance.ReadLog(VideoOS.Platform.EnvironmentManager.Instance.MasterSite.ServerId, 1, out _result, out _names, group);
+            if (numofdaysback == 0)
+            {
+                VideoOS.Platform.Log.LogClient.Instance.ReadLog(VideoOS.Platform.EnvironmentManager.Instance.MasterSite.ServerId, 1, out _result, out _names, group);
+            }
+            else
+            {
+                VideoOS.Platform.Log.LogClient.Instance.ReadLog(VideoOS.Platform.EnvironmentManager.Instance.MasterSite.ServerId, 1, out _result, out _names, group, DateTime.Now.AddDays(numofdaysback * -1), DateTime.Now);
+            }
             int colnumber = 0;
             var colNum = new DataGridViewTextBoxColumn { HeaderText = "Number" };
             
@@ -73,27 +80,27 @@ namespace Admin_Summary_Tab.Admin
             {
                 case "5135BA21-F1DC-4321-806A-6CE2017343C0":
                     Camera mycamera = new Camera(item.FQID);
-                    mypath = mycamera.ParentPath;
+                    mypath = mycamera.ParentItemPath;
                     break;
                 case "DF6284F6-18EE-4506-B8C4-65B5F31A140C":
                     Microphone mymic = new Microphone(item.FQID);
-                    mypath = mymic.ParentPath;
+                    mypath = mymic.ParentItemPath;
                     break;
                 case "B77D68FC-B231-441B-8EB5-901C89234111":
                     Speaker myspeaker = new Speaker(item.FQID);
-                    mypath = myspeaker.ParentPath;
+                    mypath = myspeaker.ParentItemPath;
                     break;
                 case "CBAAA726-A089-4DB6-8F0D-48772E595B1B":
                     Output myoutput = new Output(item.FQID);
-                    mypath = myoutput.ParentPath;
+                    mypath = myoutput.ParentItemPath;
                     break;
                 case "5FC737A9-BBF6-4473-A421-7E8075D45D9C":
                     InputEvent myinput = new InputEvent(item.FQID);
-                    mypath = myinput.ParentPath;
+                    mypath = myinput.ParentItemPath;
                     break;
                 case "3C829278-37AE-4EE8-8C1D-D94412CEEB74":
                     Metadata mymetadata = new Metadata(item.FQID);
-                    mypath = mymetadata.ParentPath;
+                    mypath = mymetadata.ParentItemPath;
                     break;
             }
 
@@ -105,7 +112,7 @@ namespace Admin_Summary_Tab.Admin
                 Item parentserver=item.GetParent();
                
 
-                if (arrayList[colnumber].ToString().ToLower() == item.Name.ToLower() || (checkBox1.Checked && (hardware.DisplayName== arrayList[colnumber].ToString().ToLower() || parentserver.Name.ToLower() == arrayList[colnumber].ToString().ToLower()))) 
+                if (arrayList[colnumber].ToString().ToLower() == item.Name.ToLower() || (checkBox1.Checked && (hardware.DisplayName.ToLower()== arrayList[colnumber].ToString().ToLower() || parentserver.Name.ToLower() == arrayList[colnumber].ToString().ToLower()))) 
                 {
                     DataGridViewRow row = (DataGridViewRow)mydatagrid.RowTemplate.Clone();
                     row.CreateCells(mydatagrid, arrayList.ToArray());
@@ -141,12 +148,20 @@ namespace Admin_Summary_Tab.Admin
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            fillGrid("System", _associatedItem, dGridViewLogSystem);
-            fillGrid("Audit", _associatedItem, dGridViewLogAudit);
+            fillGrid("System", _associatedItem, dGridViewLogSystem, decodenumberofdays(cmbSearchPeriod.Text));
+            fillGrid("Audit", _associatedItem, dGridViewLogAudit, decodenumberofdays(cmbSearchPeriod.Text));
 
         }
-
-        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        private int decodenumberofdays(string textdays)
+        {
+            string[] numdays = textdays.Split(' ');
+            if (int.TryParse(numdays[0], out int result))
+            {
+                return result;
+            }
+            else { return 0; };
+        }
+            private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
 
             BackgroundWorker helperBW = sender as BackgroundWorker;
@@ -310,7 +325,8 @@ namespace Admin_Summary_Tab.Admin
 
         private void cmbSearchPeriod_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            fillGrid("System", _associatedItem, dGridViewLogSystem, decodenumberofdays(cmbSearchPeriod.Text));
+            fillGrid("Audit", _associatedItem, dGridViewLogAudit, decodenumberofdays(cmbSearchPeriod.Text));
         }
     }
 }

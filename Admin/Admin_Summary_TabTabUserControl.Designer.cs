@@ -31,14 +31,14 @@ namespace Admin_Summary_Tab.Admin
             this.label1 = new System.Windows.Forms.Label();
             this.labelItemName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbSearchPeriod = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dGridViewLogAudit = new System.Windows.Forms.DataGridView();
             this.dGridViewLogSystem = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbSearchPeriod = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewLogAudit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewLogSystem)).BeginInit();
@@ -81,6 +81,36 @@ namespace Admin_Summary_Tab.Admin
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Logging Tab";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cmbSearchPeriod
+            // 
+            this.cmbSearchPeriod.AllowDrop = true;
+            this.cmbSearchPeriod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbSearchPeriod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbSearchPeriod.FormattingEnabled = true;
+            this.cmbSearchPeriod.Items.AddRange(new object[] {
+            "1 Day",
+            "2 Days",
+            "5 Days",
+            "7 Days",
+            "31 Days",
+            "Eternity (may take some time)"});
+            this.cmbSearchPeriod.Location = new System.Drawing.Point(418, 26);
+            this.cmbSearchPeriod.Name = "cmbSearchPeriod";
+            this.cmbSearchPeriod.Size = new System.Drawing.Size(121, 21);
+            this.cmbSearchPeriod.TabIndex = 11;
+            this.cmbSearchPeriod.Text = "1 Day";
+            this.cmbSearchPeriod.SelectedIndexChanged += new System.EventHandler(this.cmbSearchPeriod_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(324, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Search Period";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
             // 
@@ -147,38 +177,6 @@ namespace Admin_Summary_Tab.Admin
             this.dGridViewLogSystem.Size = new System.Drawing.Size(999, 312);
             this.dGridViewLogSystem.TabIndex = 4;
             this.dGridViewLogSystem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewLogSystem_CellContentClick);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(324, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Search Period";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // cmbSearchPeriod
-            // 
-            this.cmbSearchPeriod.AllowDrop = true;
-            this.cmbSearchPeriod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbSearchPeriod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbSearchPeriod.FormattingEnabled = true;
-            this.cmbSearchPeriod.Items.AddRange(new object[] {
-            "1 Hour",
-            "6 Hours",
-            "12 Hours",
-            "1 Day",
-            "2 Days",
-            "5 Days",
-            "7 Days",
-            "1 Month",
-            "Eternity (may take some time)"});
-            this.cmbSearchPeriod.Location = new System.Drawing.Point(467, 30);
-            this.cmbSearchPeriod.Name = "cmbSearchPeriod";
-            this.cmbSearchPeriod.Size = new System.Drawing.Size(121, 21);
-            this.cmbSearchPeriod.TabIndex = 11;
-            this.cmbSearchPeriod.SelectedIndexChanged += new System.EventHandler(this.cmbSearchPeriod_SelectedIndexChanged);
             // 
             // Admin_Summary_TabTabUserControl
             // 

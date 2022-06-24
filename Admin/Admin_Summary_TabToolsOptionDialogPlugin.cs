@@ -6,7 +6,7 @@ namespace Admin_Summary_Tab.Admin
 {
     public class Admin_Summary_TabToolsOptionDialogPlugin : ToolsOptionsDialogPlugin
     {
-        
+        private Admin_Summary_TabToolsOptionDialogUserControl _myUserControl;
         private Guid _myPropertyId = new Guid("D8979A59-D40D-4CEC-98FF-3BD06EE17B05");
 
         public override void Init()

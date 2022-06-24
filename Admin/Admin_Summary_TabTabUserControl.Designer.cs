@@ -31,14 +31,14 @@ namespace Admin_Summary_Tab.Admin
             this.label1 = new System.Windows.Forms.Label();
             this.labelItemName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbSearchPeriod = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dGridViewLogAudit = new System.Windows.Forms.DataGridView();
             this.dGridViewLogSystem = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbSearchPeriod = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewLogAudit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGridViewLogSystem)).BeginInit();
@@ -82,39 +82,9 @@ namespace Admin_Summary_Tab.Admin
             this.groupBox1.Text = "Logging Tab";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // cmbSearchPeriod
-            // 
-            this.cmbSearchPeriod.AllowDrop = true;
-            this.cmbSearchPeriod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbSearchPeriod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbSearchPeriod.FormattingEnabled = true;
-            this.cmbSearchPeriod.Items.AddRange(new object[] {
-            "1 Day",
-            "2 Days",
-            "5 Days",
-            "7 Days",
-            "31 Days",
-            "Eternity (may take some time)"});
-            this.cmbSearchPeriod.Location = new System.Drawing.Point(416, 30);
-            this.cmbSearchPeriod.Name = "cmbSearchPeriod";
-            this.cmbSearchPeriod.Size = new System.Drawing.Size(121, 21);
-            this.cmbSearchPeriod.TabIndex = 11;
-            this.cmbSearchPeriod.Text = "1 Day";
-            this.cmbSearchPeriod.SelectedIndexChanged += new System.EventHandler(this.cmbSearchPeriod_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(324, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Search Period";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(830, 53);
+            this.button1.Location = new System.Drawing.Point(830, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 33);
             this.button1.TabIndex = 9;
@@ -136,7 +106,7 @@ namespace Admin_Summary_Tab.Admin
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 424);
+            this.label3.Location = new System.Drawing.Point(24, 453);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 7;
@@ -145,7 +115,7 @@ namespace Admin_Summary_Tab.Admin
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 73);
+            this.label2.Location = new System.Drawing.Point(24, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 6;
@@ -158,10 +128,10 @@ namespace Admin_Summary_Tab.Admin
             this.dGridViewLogAudit.AllowUserToOrderColumns = true;
             this.dGridViewLogAudit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dGridViewLogAudit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridViewLogAudit.Location = new System.Drawing.Point(24, 440);
+            this.dGridViewLogAudit.Location = new System.Drawing.Point(24, 469);
             this.dGridViewLogAudit.Name = "dGridViewLogAudit";
             this.dGridViewLogAudit.ReadOnly = true;
-            this.dGridViewLogAudit.Size = new System.Drawing.Size(999, 280);
+            this.dGridViewLogAudit.Size = new System.Drawing.Size(999, 251);
             this.dGridViewLogAudit.TabIndex = 5;
             // 
             // dGridViewLogSystem
@@ -171,12 +141,44 @@ namespace Admin_Summary_Tab.Admin
             this.dGridViewLogSystem.AllowUserToOrderColumns = true;
             this.dGridViewLogSystem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dGridViewLogSystem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGridViewLogSystem.Location = new System.Drawing.Point(24, 92);
+            this.dGridViewLogSystem.Location = new System.Drawing.Point(24, 126);
             this.dGridViewLogSystem.Name = "dGridViewLogSystem";
             this.dGridViewLogSystem.ReadOnly = true;
-            this.dGridViewLogSystem.Size = new System.Drawing.Size(999, 322);
+            this.dGridViewLogSystem.Size = new System.Drawing.Size(999, 312);
             this.dGridViewLogSystem.TabIndex = 4;
             this.dGridViewLogSystem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGridViewLogSystem_CellContentClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(324, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Search Period";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // cmbSearchPeriod
+            // 
+            this.cmbSearchPeriod.AllowDrop = true;
+            this.cmbSearchPeriod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbSearchPeriod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbSearchPeriod.FormattingEnabled = true;
+            this.cmbSearchPeriod.Items.AddRange(new object[] {
+            "1 Hour",
+            "6 Hours",
+            "12 Hours",
+            "1 Day",
+            "2 Days",
+            "5 Days",
+            "7 Days",
+            "1 Month",
+            "Eternity (may take some time)"});
+            this.cmbSearchPeriod.Location = new System.Drawing.Point(467, 30);
+            this.cmbSearchPeriod.Name = "cmbSearchPeriod";
+            this.cmbSearchPeriod.Size = new System.Drawing.Size(121, 21);
+            this.cmbSearchPeriod.TabIndex = 11;
+            this.cmbSearchPeriod.SelectedIndexChanged += new System.EventHandler(this.cmbSearchPeriod_SelectedIndexChanged);
             // 
             // Admin_Summary_TabTabUserControl
             // 

@@ -37,43 +37,24 @@ namespace Admin_Summary_Tab.Admin
             InitializeComponent();
             bool isInitialized = VideoOS.Platform.Log.LogClient.Instance.Initialized;
             System.Collections.ArrayList groups = VideoOS.Platform.Log.LogClient.Instance.ReadGroups(VideoOS.Platform.EnvironmentManager.Instance.MasterSite.ServerId);
-            
-            fillGrid("System",item, dGridViewLogSystem, decodenumberofdays(cmbSearchPeriod.Text));
-            fillGrid("Audit", item, dGridViewLogAudit, decodenumberofdays(cmbSearchPeriod.Text));
+
+            fillGrid("System",item, dGridViewLogSystem);
+            fillGrid("Audit", item, dGridViewLogAudit);
 
             _associatedItem = item;
             labelItemName.Text = item.Name;
             
         }
-        private int decodenumberofdays(string textdays)
-        {
-            string[] numdays = textdays.Split(' ');
-                 if (int.TryParse(numdays[0],out int result))
-            {
-                return result;
-            }
-            else { return 0; };
-
-                
-
-        }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void fillGrid(string group,Item item,DataGridView mydatagrid, int numofdaysback)
+        private void fillGrid(string group,Item item,DataGridView mydatagrid)
         {
             mydatagrid.Columns.Clear();
             String mypath = "";
-            if (numofdaysback == 0)
-            {
-                VideoOS.Platform.Log.LogClient.Instance.ReadLog(VideoOS.Platform.EnvironmentManager.Instance.MasterSite.ServerId, 1, out _result, out _names, group);
-            }
-            else
-            {
-                VideoOS.Platform.Log.LogClient.Instance.ReadLog(VideoOS.Platform.EnvironmentManager.Instance.MasterSite.ServerId, 1, out _result, out _names, group,DateTime.Now.AddDays(numofdaysback*-1), DateTime.Now);
-            }
-            
+
+            VideoOS.Platform.Log.LogClient.Instance.ReadLog(VideoOS.Platform.EnvironmentManager.Instance.MasterSite.ServerId, 1, out _result, out _names, group);
             int colnumber = 0;
             var colNum = new DataGridViewTextBoxColumn { HeaderText = "Number" };
             
@@ -160,8 +141,8 @@ namespace Admin_Summary_Tab.Admin
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            fillGrid("System", _associatedItem, dGridViewLogSystem, decodenumberofdays(cmbSearchPeriod.Text));
-            fillGrid("Audit", _associatedItem, dGridViewLogAudit, decodenumberofdays(cmbSearchPeriod.Text));
+            fillGrid("System", _associatedItem, dGridViewLogSystem);
+            fillGrid("Audit", _associatedItem, dGridViewLogAudit);
 
         }
 

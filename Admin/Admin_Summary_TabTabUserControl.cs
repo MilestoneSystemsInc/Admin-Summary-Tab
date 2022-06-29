@@ -144,8 +144,11 @@ namespace Admin_Summary_Tab.Admin
                         }
                     }
                 }
-
             }
+            mydatagrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            mydatagrid.Columns[0].Visible = false;
+            mydatagrid.RowHeadersVisible = false;
+
         }
         public override void Init()
         {

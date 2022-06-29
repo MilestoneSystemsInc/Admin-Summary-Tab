@@ -119,7 +119,6 @@
     <EmbeddedResource Include="Admin\Admin_Summary_TabToolsOptionDialogUserControl.resx">
       <DependentUpon>Admin_Summary_TabToolsOptionDialogUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Server.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Admin\Admin_Summary_TabHelpPage.resx">
@@ -139,8 +138,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\logicon.png" />
-    <EmbeddedResource Include="Resources\DummyItem.bmp" />
-    <EmbeddedResource Include="Resources\WorkSpaceIcon.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\Settings.settings">

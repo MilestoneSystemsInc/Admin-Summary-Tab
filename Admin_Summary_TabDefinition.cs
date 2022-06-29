@@ -136,11 +136,11 @@ namespace Admin_Summary_Tab
                 Inputtab.setID(Admin_Summary_TabTabPluginId6);
                 _tabPlugins.Add(Inputtab);
 
-                Admin_Summary_TabTabPlugin FolderTab = new Admin_Summary_TabTabPlugin();
-                FolderTab.setkind(Kind.Folder);
-                FolderTab.setID(Admin_Summary_TabTabPluginId7);
-                _tabPlugins.Add(FolderTab);
-                
+                //Admin_Summary_TabTabPlugin FolderTab = new Admin_Summary_TabTabPlugin();
+                //FolderTab.setkind(Kind.Folder);
+                //FolderTab.setID(Admin_Summary_TabTabPluginId7);
+                //_tabPlugins.Add(FolderTab);
+
                 //Admin_Summary_TabTabPlugin hardwaretab = new Admin_Summary_TabTabPlugin();
                 //hardwaretab.setkind(Kind.Hardware);
                 //hardwaretab.setID(Admin_Summary_TabTabPluginId3);

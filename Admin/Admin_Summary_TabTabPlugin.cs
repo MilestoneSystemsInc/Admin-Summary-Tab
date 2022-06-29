@@ -40,7 +40,7 @@ namespace Admin_Summary_Tab.Admin
 
         public override string Name
         {
-            get { return "Logging Tab"; }
+            get { return "Device Log"; }
         }
 
         /// <summary>

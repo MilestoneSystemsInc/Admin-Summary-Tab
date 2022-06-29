@@ -138,6 +138,7 @@
     <Content Include="plugin.def">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\logicon.png" />
     <EmbeddedResource Include="Resources\DummyItem.bmp" />
     <EmbeddedResource Include="Resources\WorkSpaceIcon.bmp" />
   </ItemGroup>

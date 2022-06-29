@@ -40,6 +40,7 @@ namespace Admin_Summary_Tab
         internal static Guid Admin_Summary_TabTabPluginId4 = new Guid("b6b8568b-ca5d-45bf-aa5a-2e47619c3814");
         internal static Guid Admin_Summary_TabTabPluginId5 = new Guid("b6b8568b-ca5d-45bf-aa5a-2e47619c3815");
         internal static Guid Admin_Summary_TabTabPluginId6 = new Guid("b6b8568b-ca5d-45bf-aa5a-2e47619c3816");
+        internal static Guid Admin_Summary_TabTabPluginId7 = new Guid("b6b8568b-ca5d-45bf-aa5a-2e47619c3817");
         internal static Guid Admin_Summary_TabViewLayoutId = new Guid("898dc233-f951-434c-b456-a43c984bd003");
         // IMPORTANT! Due to shortcoming in Visual Studio template the below cannot be automatically replaced with proper unique GUIDs, so you will have to do it yourself
         internal static Guid Admin_Summary_TabWorkSpaceToolbarPluginId = new Guid("22222222-9871-2222-2222-222222222222");
@@ -134,6 +135,12 @@ namespace Admin_Summary_Tab
                 Inputtab.setkind(Kind.InputEvent);
                 Inputtab.setID(Admin_Summary_TabTabPluginId6);
                 _tabPlugins.Add(Inputtab);
+
+                Admin_Summary_TabTabPlugin FolderTab = new Admin_Summary_TabTabPlugin();
+                FolderTab.setkind(Kind.Folder);
+                FolderTab.setID(Admin_Summary_TabTabPluginId7);
+                _tabPlugins.Add(FolderTab);
+                
                 //Admin_Summary_TabTabPlugin hardwaretab = new Admin_Summary_TabTabPlugin();
                 //hardwaretab.setkind(Kind.Hardware);
                 //hardwaretab.setID(Admin_Summary_TabTabPluginId3);

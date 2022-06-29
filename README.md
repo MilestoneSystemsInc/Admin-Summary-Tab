@@ -15,6 +15,9 @@ Uninstall
 Incase of issues please stop the mangement client enter the folder you created in C:\Program Files\Milestone\MIPPlugins
 and rename the plugin.def to plugin.def.disabled to stop the plugin from being loaded.
 
+Limitations - Milestone logging tracks items by name, as such if you have multiple devices with the same name you will get duplicate log entries display for the selected and the same named device. 
+Similarly if you rename a device then it will no longer find the relative logs in the tab.
+Milestone logs do not resolve miliseconds, as such you have fidelity to the nearest second only.
 
 Logging
 
